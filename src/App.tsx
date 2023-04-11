@@ -1,34 +1,58 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	Heading,
+	Text,
+	Box,
+	Stack,
+	StackDivider,
+	Container,
+} from '@chakra-ui/react';
 
 function App() {
-	const [count, setCount] = useState(0);
 
 	return (
-		<div className="App">
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</div>
+		<Container
+			maxW="2xl"
+			centerContent
+			p="4"
+		>
+			<Card>
+				<CardHeader>
+					<Heading size="md">Client Report</Heading>
+				</CardHeader>
+
+				<CardBody>
+					<Stack divider={<StackDivider />} spacing="4">
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Summary
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								View a summary of all your clients over the last month.
+							</Text>
+						</Box>
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Overview
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								Check out the overview of your clients.
+							</Text>
+						</Box>
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Analysis
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								See a detailed analysis of all your business clients.
+							</Text>
+						</Box>
+					</Stack>
+				</CardBody>
+			</Card>
+		</Container>
 	);
 }
 
